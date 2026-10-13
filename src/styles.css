@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --pixel-bg: #fff7fc;
+  --pixel-panel: #ffffff;
+  --pixel-accent: #ff63b1;
+  --pixel-accent-dark: #c23a7b;
+  --pixel-ink: #b96b95;
+  --pixel-shadow: #e7a7c6;
+}
+
+body {
+  margin: 0;
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  background: var(--pixel-bg);
+  color: var(--pixel-ink);
+  background-image:
+    linear-gradient(0deg, transparent 24px, rgba(255, 99, 177, 0.08) 24px, rgba(255, 99, 177, 0.08) 25px, transparent 25px),
+    linear-gradient(90deg, transparent 24px, rgba(255, 99, 177, 0.08) 24px, rgba(255, 99, 177, 0.08) 25px, transparent 25px);
+  background-size: 25px 25px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 12px 12px;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 35px;
+  margin: 6px 0 14px;
+  color: var(--pixel-accent-dark);
+  text-shadow: 3px 3px 0 rgba(199, 90, 139, 0.22);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.mood-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 12px;
+  margin: 10px 0 8px;
+  text-align: center;
+  color: var(--pixel-accent-dark);
+}
+
+button {
+  padding: 12px 14px;
+  border: 3px solid var(--pixel-ink);
+  font-size: 14px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  background: var(--pixel-panel);
+  color: var(--pixel-ink);
+  box-shadow: 4px 4px 0 var(--pixel-shadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--pixel-shadow);
+}
+
+button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.primary-btn {
+  background: var(--pixel-accent);
+  color: white;
+}
+
+.card,
+.calendar-card {
+  margin-top: 6px;
+  padding: 8px;
+  width: 100%;
+  background: var(--pixel-panel);
+  border: 3px solid var(--pixel-ink);
+  text-align: center;
+  box-shadow: 6px 6px 0 var(--pixel-shadow);
+  box-sizing: border-box;
+}
+
+.card h2,
+.calendar-page h1 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--pixel-accent-dark);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.app-container > button {
+  margin-top: 20px;
+}
+
+.calendar-page {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 8px 0 20px;
+  text-align: center;
+}
+
+.calendar-page h1 {
+  padding-top: 4px;
+  padding-bottom: 15px;
+  margin-bottom: 8px;
+}
+
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 11px;
+  color: var(--pixel-accent-dark);
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-day {
+  height: 48px;
+  border: 2px solid var(--pixel-ink);
+  background: #fff1f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 2px 2px 0 rgba(185, 107, 149, 0.18);
+}
+
+.cal-day .emoji {
+  font-size: 15px;
+}
+
+.cal-day .date {
+  font-size: 9px;
+  color: var(--pixel-accent-dark);
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+.cal-day.empty {
+  background: transparent;
+  border: 2px dashed rgba(185, 107, 149, 0.25);
+  box-shadow: none;
+}
+
+.calendar-summary {
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--pixel-accent-dark);
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.cal-day.locked {
+  opacity: 0.6;
+}
+
+.cal-day.today {
+  border: 3px solid var(--pixel-accent);
+  background: #ffe5f0;
+}
+
+.offline-banner {
+  width: 100%;
+  background: #ff8fc7;
+  color: white;
+  padding: 10px;
+  border: 3px solid var(--pixel-ink);
+  box-shadow: 4px 4px 0 var(--pixel-shadow);
+  margin: 6px 0 40px;
+  text-align: center;
+  font-size: 13px;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  line-height: 1.5;
+}
